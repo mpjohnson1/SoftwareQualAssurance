@@ -1,6 +1,6 @@
 This file will document all Prompts and Feedback given by AI for this lab
 =========================================================
-Initial Prompt:"I want to create a calculator program in python using the procedural paradigm. Initially, the feature will be for addition, subtraction, multiplication, and division. I will add other features such as present value, mortgage payments, etc. later so the design must easily allow this.
+**Initial Prompt:"I want to create a calculator program in python using the procedural paradigm. Initially, the feature will be for addition, subtraction, multiplication, and division. I will add other features such as present value, mortgage payments, etc. later so the design must easily allow this.**
 ------------------------------------------------------
 Response: Here's a basic structure for your calculator program using a procedural paradigm. This design is modular, making it easy to add more features later.
 
@@ -107,7 +107,7 @@ def get_operation_choice():
 This approach ensures your calculator is flexible and can easily incorporate more complex calculations as needed.
 
 
-2nd Prompt: "Can unit tests using `Pytest` be created to test the code easily with minimum mocking?"
+**2nd Prompt: "Can unit tests using `Pytest` be created to test the code easily with minimum mocking?"**
 ------------------------------------------------------------------------------------------------
 response: Yes, you can easily create unit tests using `pytest` for the calculator functions without needing much, if any, mocking since these are straightforward mathematical functions. Here's a basic guide to setting up unit tests for the calculator program:
 
@@ -170,7 +170,7 @@ pytest test_calculator.py
 This setup ensures your functions are thoroughly tested and reliable, and you can expand it easily when adding new features like present value or mortgage calculations by writing additional test cases in a similar style.
 
 
-3rd Prompt: "Does the code meet the following principles? If not, where and how do I refactor? Code that meets SOLID principles as well as DRY, KISS, YAGNI, Law of Demeter, Composition over inheritance, Encapsulation, High Cohesion, Low Coupling, modular design, OOP principles. Code should be easy to maintain, easy to add features, and easy to test using `Pytest`."
+**3rd Prompt: "Does the code meet the following principles? If not, where and how do I refactor? Code that meets SOLID principles as well as DRY, KISS, YAGNI, Law of Demeter, Composition over inheritance, Encapsulation, High Cohesion, Low Coupling, modular design, OOP principles. Code should be easy to maintain, easy to add features, and easy to test using `Pytest`."**
 ------------------------------------------------------------------------------------------------------------------
 Response: Your initial code mostly adheres to procedural programming and meets several good practices such as modularity, encapsulation, and simplicity (KISS). However, to fully meet the principles of SOLID, DRY, Law of Demeter, and other best practices you mentioned, refactoring into an Object-Oriented approach will be necessary. Below, I will explain where the current code deviates and provide a refactored version that aligns with these principles.
 
@@ -336,7 +336,7 @@ def test_calculator_operations():
 
 This refactored design adheres to best practices and is structured for easy maintenance, testing, and expansion, making it robust for adding future features.
 
-4th Prompt: "Add a new feature that would require a database or JSON file. Modularize the code into at least four modules to help in team development, testing, maintenance, and minimizing refactoring while adding features."
+**4th Prompt: "Add a new feature that would require a database or JSON file. Modularize the code into at least four modules to help in team development, testing, maintenance, and minimizing refactoring while adding features."**
 --------------------------------------
 response: To add a new feature that involves a database or JSON file, let's consider adding a **"History"** feature to keep track of all calculations performed by the user. This feature will save the history of operations into a JSON file, making it easy to retrieve past calculations.
 
@@ -578,7 +578,7 @@ def test_save_history(tmp_path):
 
 This design allows for distributed development across teams, targeted testing, and clear pathways for adding future enhancements with minimal refactoring.
 
-5th Prompt: "If I wanted to eventually turn this into a web application, what refactoring should I do to allow this in the future?"
+**5th Prompt: "If I wanted to eventually turn this into a web application, what refactoring should I do to allow this in the future?"**
 -----------------
 Response: To prepare the current code for a future transition into a web application, you can refactor the code to make it more adaptable for web frameworks like Flask or Django. The goal is to separate the core business logic from any user interface elements (CLI in the current setup) and structure the codebase in a way that allows easy integration with web request handling.
 
