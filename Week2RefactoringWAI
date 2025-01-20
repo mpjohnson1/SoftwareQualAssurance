@@ -1,0 +1,65 @@
+# 1 Starting code
+
+# Calculate employee payroll
+ 
+def payroll(hours, rate):
+    if hours <= 40:
+        return hours * rate
+    else:
+        return (40 * rate) + ((hours - 40) * (rate * 1.5))
+ 
+print("Payroll:", payroll(45, 20))
+
+# 2 Identifying issues
+  ### the overtime is hardcoded and may be more difficult to revise
+  ### Lack of input validation, code will not work with negative inputs but has no safeguard from these
+  ### lack of error handling, code can't handle errors, needs try-except to be implemented.
+
+# 3 refactor with ai, given parameters
+
+# 4 refactored code:
+from typing import Union
+
+# Calculate employee payroll
+def payroll(
+    hours: Union[int, float], 
+    rate: Union[int, float], 
+    overtime_threshold: int = 40, 
+    overtime_multiplier: float = 1.5
+) -> float:
+    """
+    Calculate the payroll for an employee.
+
+    Parameters:
+    hours (float): Total hours worked.
+    rate (float): Hourly pay rate.
+    overtime_threshold (int, optional): Hours after which overtime applies. Default is 40.
+    overtime_multiplier (float, optional): Overtime pay multiplier. Default is 1.5.
+
+    Returns:
+    float: Total payroll.
+    """
+    if not isinstance(hours, (int, float)) or not isinstance(rate, (int, float)):
+        raise ValueError("Both 'hours' and 'rate' must be numeric values.")
+    if hours < 0 or rate < 0:
+        raise ValueError("'hours' and 'rate' must be non-negative.")
+
+    if hours <= overtime_threshold:
+        return round(hours * rate, 2)
+    else:
+        overtime_hours = hours - overtime_threshold
+        regular_pay = overtime_threshold * rate
+        overtime_pay = overtime_hours * (rate * overtime_multiplier)
+        return round(regular_pay + overtime_pay, 2)
+
+# Example usage
+try:
+    print("Payroll:", payroll(45, 20))
+except ValueError as e:
+    print("Error:", e)
+
+# Reflections
+AI helped to make the code much more robust. It identified the fact that the code was functional but relatively weak and prone to failure if not properly handled. 
+There were not any changes that chatGPT suggested that I was did not agree with. I think it perhaps went overboard with complexity in its error handling but 
+ultimately that is just the limits of my knowledge being threatened more than an actual problem with the suggestions. 
+I didn't really learn much other than the very robust error handling it implemented. As always it is an impressive tool.
