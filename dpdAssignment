@@ -1,10 +1,39 @@
-Mark Johnson : mpjohnson1
+# Project Constraints (Mark)
 
-I am in Group 1, the PM is Derek Williford.
+## Database Management System  
+The choice of a database (SQL, NoSQL) will impact scalability, speed, and data privacy features. If using cloud storage, downtime or API limitations could affect reliability.  
 
-My contribution to the development plan was to identify and explain project constraints.
-Things that could impede progress or interfere with execution, as well as dependencies that
-might hurt us down the line if not accounted for early-on.
+## Development Team  
+Success is dependent on the expertise of the development team throughout the project lifecycle.  
 
+## Time Constraints  
+Project must be completed by deadline, core features like login, profiles, and flashcard database should be prioritized in early sprints.  
 
+## Availability of Developers  
+Team members may have limited availability due to other commitments, affecting deadlines.  
 
+## Regulatory & Security  
+User profiles and flashcard data must adhere to privacy policies. Temporary guest sessions should not store personal data permanently. User data (login, profiles) must be securely stored and transmitted (e.g., HTTPS, hashed passwords).  
+
+## Text-to-Speech API  
+The accessibility feature relies on third-party text-to-speech services (e.g., Google Text-to-Speech, AWS Polly). API limits, pricing models, or outages could impact this functionality.  
+
+## Hosting & Deployment Services  
+The project depends on a hosting platform (e.g., AWS, Firebase, Vercel). Service outages or pricing limitations could disrupt deployment.  
+
+## Authentication Provider  
+If integrating with third-party authentication (e.g., Google OAuth), API changes, rate limits, or downtime could block login functionality.  
+
+---
+
+# Project Resources Required (Raegan)  
+
+*{List assets, tools, personnel, and materials required for the successful planning, execution, and completion of a project.}*  
+
+## Tools:  
+- GitHub  
+- Trello  
+- Microsoft Teams  
+- Microsoft Suite  
+- Visual Studio Code  
+- Python  
