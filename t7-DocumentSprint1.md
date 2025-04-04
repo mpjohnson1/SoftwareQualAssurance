@@ -2,7 +2,7 @@
 
 ## **Sprint Overview**
 - **Sprint Number:** [Sprint 1]
-- **Sprint Duration:** [March 3] - [End Date]
+- **Sprint Duration:** [Feb 25] - [March 11]
 - **Sprint Goal:** [Brief summary of what this sprint aims to achieve]
 - **Team Members:** [List of team members involved]
 
