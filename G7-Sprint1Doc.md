@@ -22,7 +22,7 @@
 | **ID** | **User Story** | **Acceptance Criteria** | **Priority** |
 |--------|--------------|----------------------|------------|
 | EM-001 | As an admin, I want to create an employee profile so that new hires can be managed in the system. | Given an admin user, when they submit a valid employee form, then a new employee is created in the database. | High |
-| EM-002 | As an admin, I want to read employee details so that I can view relevant information. | Given an admin user, when they search for an employee, then the system returns the employee’s details. | High |
+| EM-002 | As an admin, I want to read employee information so that I can view relevant details. | Given an admin user, when they search for an employee, then the system returns the employee’s information. | High |
 | EM-003 | As an admin, I want to update an employee record so that I can modify their details if needed. | Given an admin user, when they update employee data and submit, then the changes are saved in the database. | Medium |
 | EM-004 | As an admin, I want to delete an employee record so that outdated records are removed from the system. | Given an admin user, when they delete an employee, then the employee record is permanently removed. | Medium |
 
@@ -34,12 +34,18 @@
 - **Endpoint:** `POST /api/employees`
 - **Request Body:**
 ```json
-{
-  "name": "John Doe",
-  "email": "johndoe@example.com",
-  "position": "Software Engineer",
-  "department": "IT"
-}
+        {
+            "name": "Create Employee",
+            "request": {
+                "method": "POST",
+                "url": "http://localhost:5000/api/employees",
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\"name\":\"Alice\",\"email\":\"alice@example.com\"}"
+                }
+            },
+            "response": []
+        }
 ```
 - **Response:**
 ```json
@@ -54,7 +60,11 @@
 ```
 
 #### **Read Employee**
-- **Endpoint:** `GET /api/employees/{id}`
+- **Endpoint:** `"name": "Get Employees",
+            "request": {
+                "method": "GET",
+                "url": "http://localhost:5000/api/employees"
+            }`
 - **Response:**
 ```json
 {
@@ -100,9 +110,15 @@
 ## **4. Sprint Progress Tracking**
 | **Task ID** | **Task Description** | **Assigned To** | **Status** |
 |------------|----------------|------------|--------|
+| Sprint 1 |
 | T-101 | Implement Employee Creation API | [Reena Shrestha] | Done |
 | T-102 | Develop UI for Employee CRUD | [Reena Shrestha] | Done |
 | T-103 | Write Unit Tests for Employee API | [Sarah White] | Done |
+| Sprint 2 |
+| T-104 | Implement core CRUD functionality for employees | [Team member] | Done |
+| T-105 | Begin integration of front-end with back-end | [Team Mem] | Done |
+| T-106 | Create key API endpoints and test them | [Team mem] | Done|
+| T-107 | Write or expand documentation | [Mark Johnson] | Done |
 
 ---
 
