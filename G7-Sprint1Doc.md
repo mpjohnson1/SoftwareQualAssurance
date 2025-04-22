@@ -31,39 +31,36 @@
 ## **3. API Specifications**
 ### **Employee Management API Endpoints**
 #### **Create Employee**
-- **Endpoint:** `POST /api/employees`
+- **Endpoint:** `@employee_routes.route('/api/v1/employees', methods=['POST'])`
 - **Request Body:**
 ```json
         {
-            "name": "Create Employee",
-            "request": {
-                "method": "POST",
-                "url": "http://localhost:5000/api/employees",
-                "body": {
-                    "mode": "raw",
-                    "raw": "{\"name\":\"Alice\",\"email\":\"alice@example.com\"}"
-                }
-            },
-            "response": []
+              new_employee = Employee(
+            name=data["name"],
+            position=data["position"],
+            departmentId=data["departmentId"],
+            email=data["email"],
+            phone=data.get("phone")
+ },
+            "response": return jsonify(new_employee.to_dict()), 201
         }
 ```
 - **Response:**
 ```json
 {
-  "id": 1,
   "name": "John Doe",
-  "email": "johndoe@example.com",
   "position": "Software Engineer",
-  "department": "IT",
-  "status": "Employee created successfully"
+  "departmentId": "IT",
+  "email": "johndoe@example.com",
+  "status": "201: Employee created successfully"
 }
 ```
 
 #### **Read Employee**
-- **Endpoint:** `"name": "Get Employees",
+- **Endpoint:** `"name": "get_employee",
             "request": {
                 "method": "GET",
-                "url": "http://localhost:5000/api/employees"
+                "url": "/api/v1/employees/<int:employee_id>"
             }`
 - **Response:**
 ```json
