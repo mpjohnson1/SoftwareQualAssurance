@@ -33,7 +33,7 @@
 #### **Create Employee**
 - **Endpoint:** `@employee_routes.route('/api/v1/employees', methods=['POST'])`
 - **Request Body:**
-```json
+```python
         {
              db.session.add(new_employee)
              db.session.commit()
