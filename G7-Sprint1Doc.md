@@ -51,21 +51,20 @@
 - **Response:**
 ```json
 {
-        name=data["name"],
-        position=data["position"],
-        departmentId=data["departmentId"],
-        email=data["email"],
-        phone=data.get("phone")
+        "name" : "Steve Jobless",
+        "position" : "custodian",
+        "epartmentId" : "departmentId",
+        "email" : "sjobless@email.com",
+        phone=data.get("336-299-2934")
         status= "201: Employee created successfully"
 }
 ```
 
 #### **Read Employee**
-- **Endpoint:** `"name": "get_employees",
-            "request": {
-                "method": "GET",
-                "url": "/api/v1/employees/<int:employee_id>"
-            }
+- **Endpoint:** `@employee_routes.route('/api/v1/employees', methods=['GET'])'
+- **Request Body:**
+```python
+    {
     search_term = request.args.get('search')
     employees = Employee.query.all() if search_term is None else Employee.query.filter(
         db.or_(
@@ -73,9 +72,8 @@
             Employee.position.like(f'%{search_term}%'),
             Employee.email.like(f'%{search_term}%')
         )
-    ).all()
-    return jsonify([emp.to_dict() for emp in employees]), 200
-  `
+).all()
+}
 - **Response:**
 ```json
 {
@@ -90,7 +88,7 @@
 #### **Update Employee**
 - **Endpoint:** `PUT /api/v1/employees/<int:employee_id>`
 - **Request Body:**
-```json
+```python
 {
   employee = Employee.query.get(employee_id)
 }
@@ -113,7 +111,7 @@
 - **Response:**
 ```json
 {
-  "message": "Employee deleted"
+  "message": "200: Employee deleted"
 }
 ```
 
