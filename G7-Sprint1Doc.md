@@ -35,6 +35,9 @@
 - **Request Body:**
 ```json
         {
+             db.session.add(new_employee)
+             db.session.commit()
+
               new_employee = Employee(
             name=data["name"],
             position=data["position"],
@@ -48,37 +51,48 @@
 - **Response:**
 ```json
 {
-  "name": "John Doe",
-  "position": "Software Engineer",
-  "departmentId": "IT",
-  "email": "johndoe@example.com",
-  "status": "201: Employee created successfully"
+        name=data["name"],
+        position=data["position"],
+        departmentId=data["departmentId"],
+        email=data["email"],
+        phone=data.get("phone")
+        status= "201: Employee created successfully"
 }
 ```
 
 #### **Read Employee**
-- **Endpoint:** `"name": "get_employee",
+- **Endpoint:** `"name": "get_employees",
             "request": {
                 "method": "GET",
                 "url": "/api/v1/employees/<int:employee_id>"
-            }`
+            }
+    search_term = request.args.get('search')
+    employees = Employee.query.all() if search_term is None else Employee.query.filter(
+        db.or_(
+            Employee.name.like(f'%{search_term}%'),
+            Employee.position.like(f'%{search_term}%'),
+            Employee.email.like(f'%{search_term}%')
+        )
+    ).all()
+    return jsonify([emp.to_dict() for emp in employees]), 200
+  `
 - **Response:**
 ```json
 {
   "id": 1,
-  "name": "John Doe",
-  "email": "johndoe@example.com",
+  "name": "Jane Doe",
+  "email": "janedoe@example.com",
   "position": "Software Engineer",
   "department": "IT"
 }
 ```
 
 #### **Update Employee**
-- **Endpoint:** `PUT /api/employees/{id}`
+- **Endpoint:** `PUT /api/v1/employees/<int:employee_id>`
 - **Request Body:**
 ```json
 {
-  "email": "john.doe@company.com"
+  employee = Employee.query.get(employee_id)
 }
 ```
 - **Response:**
@@ -86,19 +100,20 @@
 {
   "id": 1,
   "name": "John Doe",
-  "email": "john.doe@company.com",
   "position": "Software Engineer",
   "department": "IT",
-  "status": "Employee updated successfully"
+  "email": "john.doe@company.com",
+  "phone": "336-332-2442",
+  "status": "200 Employee updated successfully"
 }
 ```
 
 #### **Delete Employee**
-- **Endpoint:** `DELETE /api/employees/{id}`
+- **Endpoint:** `DELETE /api/v1/employees/<int:employee_id>`
 - **Response:**
 ```json
 {
-  "status": "Employee deleted successfully"
+  "message": "Employee deleted"
 }
 ```
 
