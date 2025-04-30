@@ -17,6 +17,7 @@ This week, the team identified and addressed several issues related to misnamed 
 
 ## 💬 Communication Review
 Communication within the team went smoothly this week, with minimal back-and-forth needed to maintain steady progress. Team members were able to stay aligned through efficient task management and consistent updates on GitHub. However, one area for improvement is the level of detail provided in pull request descriptions. More informative PR summaries—including context, changes made, and reasons behind decisions—would enhance clarity for reviewers and streamline the approval process. Improving this aspect of communication would support better collaboration and reduce the chance of misunderstandings or missed details.
+
 ---
 
 
