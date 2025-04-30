@@ -55,8 +55,6 @@
         "position" : "custodian",
         "epartmentId" : "departmentId",
         "email" : "sjobless@email.com",
-        phone=data.get("336-299-2934")
-        status= "201: Employee created successfully"
 }
 ```
 
