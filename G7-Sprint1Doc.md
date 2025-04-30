@@ -1,4 +1,4 @@
-# **Sprint 1 Documentation**
+# **Sprint Documentation**
 
 ## **1. Project Charter**
 ### **Objectives**
@@ -121,13 +121,13 @@
 | **Task ID** | **Task Description** | **Assigned To** | **Status** |
 |------------|----------------|------------|--------|
 | Sprint 1 |
-| T-101 | Implement Employee Creation API | [Reena Shrestha] | Done |
-| T-102 | Develop UI for Employee CRUD | [Reena Shrestha] | Done |
-| T-103 | Write Unit Tests for Employee API | [Sarah White] | Done |
+| T-101 | Implement Employee Creation API | [Reena Shrestha & Andrew Jacob Weller] | Done |
+| T-102 | Develop UI for Employee CRUD | [Reena Shrestha & Andrew Jacob Weller] | Done |
+| T-103 | Write Unit Tests for Employee API | [Sarah White & Janay Snell] | Done |
 | Sprint 2 |
-| T-104 | Implement core CRUD functionality for employees | [Team member] | Done |
-| T-105 | Begin integration of front-end with back-end | [Team Mem] | Done |
-| T-106 | Create key API endpoints and test them | [Team mem] | Done|
+| T-104 | Implement core CRUD functionality for employees | [Reena Shrestha & Andrew Jacob Weller] | Done |
+| T-105 | Begin integration of front-end with back-end | [Sarah White & Reena Shrestha] | Done |
+| T-106 | Create key API endpoints and test them | [Reena Shrestha & Colton Stotler] | Done|
 | T-107 | Write or expand documentation | [Mark Johnson] | Done |
 
 ---
@@ -139,7 +139,7 @@
 
 ### **What could be improved?** ⚡
 - [More communication from absent team members (Like Mark Johnson)]
-- [More contributions from absent team members (Like Mark Johnson)]
+- [Better pull request details and documentation]
 
 
 ---
